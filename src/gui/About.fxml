@@ -2,11 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox prefHeight="195.0" prefWidth="344.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<VBox prefHeight="195.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="About">
          <font>
@@ -16,14 +17,47 @@
             <Insets bottom="10.0" left="20.0" top="10.0" />
          </padding>
       </Label>
-      <Label text="JavaFX application demo">
+      <Label text="CRUD application made by:">
          <opaqueInsets>
             <Insets left="20.0" />
          </opaqueInsets>
          <padding>
             <Insets left="20.0" />
          </padding>
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
       </Label>
+      <Label text="Elvio do Nascimento Vieira Júnior">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label text="Joao Victor de Lima Boudoux">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label text="Keven Wilian Monteiro de Freitas">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label text="Mauro Inojosa Medeiros De Araujo Lima">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label text="Paulo Henrique Gomes">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="122.0" fitWidth="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/1%20-%20PSVfqfo.png" />
+         </image>
+      </ImageView>
    </children>
    <opaqueInsets>
       <Insets bottom="10.0" left="20.0" top="10.0" />
