@@ -1,7 +1,7 @@
 package gui;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -16,9 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -26,8 +24,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.entities.Seller;
 import model.services.SellerService;
@@ -45,6 +41,15 @@ public class SellerListController implements Initializable, DataChangeListener {
 	@FXML
 	private TableColumn<Seller, String> tableColumName;
 
+	@FXML
+	private TableColumn<Seller, String> tableColumEmail;
+	
+	@FXML
+	private TableColumn<Seller, Date> tableColumBirthDate;
+	
+	@FXML
+	private TableColumn<Seller, Double> tableColumBaseSalary;
+	
 	@FXML
 	private TableColumn<Seller, Seller> tableColumnEDIT;
 
@@ -75,6 +80,11 @@ public class SellerListController implements Initializable, DataChangeListener {
 	private void initializeNodes() {
 		tableColumId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		tableColumName.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tableColumEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		tableColumBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
+		Utils.formatTableColumnDate(tableColumBirthDate, "dd/MM/yyyy");
+		tableColumBaseSalary.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
+		Utils.formatTableColumnDouble(tableColumBaseSalary, 2);
 
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tableViewSeller.prefHeightProperty().bind(stage.heightProperty());
